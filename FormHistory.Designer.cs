@@ -60,6 +60,7 @@ namespace FortuneTeller31
             this.Controls.Add(this.lbHistory);
             this.Name = "FormHistory";
             this.Text = "내역보기";
+            this.Load += new System.EventHandler(this.FormHistory_Load);
             this.ResumeLayout(false);
 
         }
@@ -74,5 +75,12 @@ namespace FortuneTeller31
         {
             UpdateHistory();
         }
+
+        private void lbHistory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string message = history[lbHistory.SelectedIndex];
+            form1.LoadHistory(message);
+        }
+
     }
 }

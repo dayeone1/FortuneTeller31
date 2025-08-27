@@ -49,13 +49,7 @@ namespace FortuneTeller31
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string birthday = FormHistory.Split('|')
-        }
-
-        internal void Loadhistory(string history)
-        {
-            string birthday = history.Split('|')[0].Split(' ')[0];
-            tbBirthday.Text = birthday;
+            
         }
 
         private string GetFortune()
@@ -91,13 +85,18 @@ namespace FortuneTeller31
         private void btnShowResult_Click_1(object sender, EventArgs e)
         {
             string birthday = tbBirthday.Text;
-            string birthtime = tbBirthtime.Text;
+            string birthyear = tbBirthtime.Text;
             string result = GetFortune();
             string saju = result.Split('|')[0];
             string message = result.Split('|')[1];
-            tbResult.Text = birthday + " " + birthtime + Environment.NewLine + result
-                + saju + Environment.NewLine + message;
-            SaveHistory($"{birthday} {birthtime} | {result}");
+            tbResult.Text = birthday + " " + birthyear + Environment.NewLine
+                + saju + Environment.NewLine
+                + message;
+            SaveHistory($"{birthday} {birthyear}|{result}");
+            FormHistory form = Application.OpenForms["FormHistory"] as FormHistory;
+            if (form != null)
+                form.UpdateHistory();
+
         }
 
         private void SaveHistory(string history)
