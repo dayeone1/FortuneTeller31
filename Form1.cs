@@ -91,6 +91,23 @@ namespace FortuneTeller31
             string message = result.Split('|')[1];
             tbResult.Text = birthday + " " + birthtime + Environment.NewLine + result
                 + saju + Environment.NewLine + message;
+            SaveHistory($"{birthday} {birthtime} | {result}");
+        }
+
+        private void SaveHistory(string history)
+        {
+            try
+            {
+                string filename = "history.csv";
+                File.AppendAllText(filename, history + Environment.NewLine);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show($"권환이 없습니다. \n{ex.Message}", "권환 오류");
+            }
+            catch (Exception ex) {
+                MessageBox.Show($"알 수 없는 오류가 발생했습니다. \n{ex.Message}", "알 수 없는 오류");
+            }
         }
     }
 }
