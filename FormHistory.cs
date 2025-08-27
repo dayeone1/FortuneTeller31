@@ -12,9 +12,22 @@ namespace FortuneTeller31
 {
     public partial class FormHistory : Form
     {
-        public FormHistory(Form1 form1)
+        List<string> history;
+        Form1 form1;
+
+        public FormHistory(Form1 form)
         {
+            form1 = form;
             InitializeComponent();
+            UpdateHistory();
         }
+
+        public void UpdateHistory()
+        {
+            Loadhistory();
+            lbHistory.Items.Clear();
+            lbHistory.Items.AddRange(history.ToArray());
+        }
+
     }
 }

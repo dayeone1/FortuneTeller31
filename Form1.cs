@@ -49,7 +49,13 @@ namespace FortuneTeller31
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            string birthday = FormHistory.Split('|')
+        }
+
+        internal void Loadhistory(string history)
+        {
+            string birthday = history.Split('|')[0].Split(' ')[0];
+            tbBirthday.Text = birthday;
         }
 
         private string GetFortune()
