@@ -16,5 +16,10 @@ namespace FortuneTeller31
         {
             InitializeComponent();
         }
+
+        private void FormAbout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

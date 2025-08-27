@@ -12,7 +12,7 @@ namespace FortuneTeller31
 {
     public partial class FormHistory : Form
     {
-        public FormHistory()
+        public FormHistory(Form1 form1)
         {
             InitializeComponent();
         }

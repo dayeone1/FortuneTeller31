@@ -85,9 +85,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(62, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(269, 12);
+            this.label2.Size = new System.Drawing.Size(229, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "태어난 시각을 입력하시요(오후 4시 3분) -> 1603";
+            this.label2.Text = "태어난 시각을 입력하시요(3시 3분 -> 03)";
             // 
             // tbBirthday
             // 

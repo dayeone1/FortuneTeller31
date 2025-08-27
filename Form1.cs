@@ -29,8 +29,14 @@ namespace FortuneTeller31
 
         private void 상담내역불러오기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormHistory form = new FormHistory();
-            form.Show();
+            FormHistory form = Application.OpenForms["FormHistory"] as FormHistory;
+            if(form != null)
+                form.Activate();
+            else
+            {
+                form = new FormHistory(this);
+                form.Show();
+            }
         }
 
         private void 포춘텔러정보ToolStripMenuItem_Click(object sender, EventArgs e)
